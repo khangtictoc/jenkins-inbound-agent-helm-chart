@@ -41,11 +41,16 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           env:
+          {{ if .Values.agent.jenkinsSecretName }}
           - name: JENKINS_SECRET
             valueFrom:
               secretKeyRef:
                 name: {{ .Values.agent.jenkinsSecretName }}
                 key: {{ .Values.agent.jenkinsSecretKey | default "JENKINS_SECRET" }}
+          {{ else if .Values.agent.jenkinsSecret }}
+          - name: JENKINS_SECRET
+            value: {{ .Values.agent.jenkinsSecret }}
+          {{ end }}
           - name: JENKINS_URL
             value: {{ .Values.agent.jenkinsUrl }}
           livenessProbe:
