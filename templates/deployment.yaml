@@ -40,6 +40,14 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          env:
+          - name: JENKINS_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.agent.jenkinsSecretName }}
+                key: {{ .Values.agent.jenkinsSecretKey | default "JENKINS_SECRET" }}
+          - name: JENKINS_URL
+            value: {{ .Values.agent.jenkinsUrl }}
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:

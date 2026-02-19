@@ -121,3 +121,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+agent:
+  jenkinsUrl: "http://jenkins-server:50000"
+  jenkinsSecret: "supersecretvalue123@"
+  # Secret name for Jenkins Agent to join master, must have a key named "JENKINS_SECRET"
+  jenkinsSecretName: "my-jenkins-secret"
+  # Key in the secret that contains the Jenkins secret for the agent to join master, default is "JENKINS_SECRET"
+  jenkinsSecretKey: "JENKINS_SECRET"
