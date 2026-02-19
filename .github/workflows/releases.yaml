@@ -25,7 +25,7 @@ jobs:
 
       - name: Package Helm Chart
         run: |
-          helm package . --destination ./dist        # ← package from root directly
+          helm package . --destination ./dist
 
       - name: Generate index.yaml
         run: |
@@ -36,5 +36,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # push dist/ contents to gh-pages
+          publish_dir: ./dist
           keep_files: true
