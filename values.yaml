@@ -128,3 +128,7 @@ agent:
   jenkinsSecretName: "my-jenkins-secret"
   # Key in the secret that contains the Jenkins secret for the agent to join master, default is "JENKINS_SECRET"
   jenkinsSecretKey: "JENKINS_SECRET"
+
+  # Enable Kaniko for building container images
+  kaniko:
+    enabled: false
