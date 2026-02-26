@@ -41,6 +41,14 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           env:
+          - name: AGENT_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name   # ← K8s injects the real pod name here
+          - name: AGENT_POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
           {{ if .Values.agent.jenkinsSecretName }}
           - name: JENKINS_SECRET
             valueFrom:
