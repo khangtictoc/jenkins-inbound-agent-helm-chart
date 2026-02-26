@@ -3,9 +3,9 @@ entries:
   jenkins-inbound-agent:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2026-02-26T01:39:15.95442556Z"
+    created: "2026-02-26T10:30:46.564588844Z"
     description: A Helm chart for Kubernetes
-    digest: b5f662eadbc18b602d33a013397c039a0bfe0f7745c58b9647ad78aedc35983d
+    digest: 28ad5e46ea09589a7c8ff68449fd72e61358f7e472814f8471f6870d0758505d
     keywords:
     - jenkins
     - ci-cd
@@ -16,6 +16,6 @@ entries:
     name: jenkins-inbound-agent
     type: application
     urls:
-    - https://khangtictoc.github.io/jenkins-inbound-agent-helm-chart/jenkins-inbound-agent-0.14.0.tgz
-    version: 0.14.0
-generated: "2026-02-26T01:39:15.952817962Z"
+    - https://khangtictoc.github.io/jenkins-inbound-agent-helm-chart/jenkins-inbound-agent-0.15.0.tgz
+    version: 0.15.0
+generated: "2026-02-26T10:30:46.563915968Z"
